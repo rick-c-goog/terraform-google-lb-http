@@ -38,3 +38,23 @@ variable "lb_name" {
   description = "Name for load balancer and associated resources"
   default     = "tf-cr-lb"
 }
+
+
+variable "certificate" {
+  description = "Run load balancer on HTTPS and provision managed certificate with provided `domain`."
+  type        = string
+  default     = <<-EOT
+-----BEGIN CERTIFICATE-----
+
+-----END CERTIFICATE-----
+EOT
+}
+variable "private_key" {
+  description = "Run load balancer on HTTPS and provision managed certificate with provided `domain`."
+  type        = string
+  default     = <<-EOT
+-----BEGIN PRIVATE KEY-----
+
+-----END PRIVATE KEY-----
+EOT
+}

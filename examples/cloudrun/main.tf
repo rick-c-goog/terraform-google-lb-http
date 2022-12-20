@@ -30,7 +30,11 @@ module "lb-http" {
   project = var.project_id
 
   ssl                             = var.ssl
-  managed_ssl_certificate_domains = [var.domain]
+  #managed_ssl_certificate_domains = [var.domain]
+
+  private_key=var.private_key
+  certificate = var.certificate
+
   https_redirect                  = var.ssl
   labels                          = { "example-label" = "cloud-run-example" }
 
